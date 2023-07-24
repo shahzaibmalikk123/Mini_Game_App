@@ -7,6 +7,7 @@ import Colors from './constants/colors';
 import GameScreen from './screens/GameScreen';
 import GameOver from './screens/GameOver';
 import AppLoading from 'expo-app-loading';
+import { StatusBar } from 'expo-status-bar';
 export default function App() {
   const [userNumber , setUserNumber] = useState();
   const [gameIsOver, setGameIsOver] = useState(true);
@@ -49,6 +50,8 @@ export default function App() {
   
 
   return (
+    <>
+    <StatusBar style='dark'/>
     <View colors={["#ddb52f", "#4e0329"]} style={styles.rootColor}>
       <ImageBackground source={require("./assets/images/dices2.jpg")} 
       resizeMode='cover'
@@ -60,6 +63,7 @@ export default function App() {
         
       </ImageBackground>
     </View>
+    </>
   );
 }
 
